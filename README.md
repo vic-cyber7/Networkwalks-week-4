@@ -136,3 +136,33 @@ curl https://medirozahospital.com/robots.txt
 # Directory and content discovery
 gobuster dir -u https://medirozahospital.com \
 -w /usr/share/seclists/Discovery/Web-Content/common.txt
+
+```
+### Evidences
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/4f154c9e-dfe0-403f-aee0-285f0661b39b" />
+
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/8084564b-927b-4e44-aea9-951e548acb16" />
+
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/bdfe5b5b-39e9-4618-9b37-034e260d551a" />
+
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/9f9c2b5b-a0c5-44dc-a9b6-776c6217af8a" />
+
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/48d43f77-96ab-42c9-ac0f-17d83c831199" />
+
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/64e8cf98-bf6f-4fe5-9ad6-224fc520f3e4" />
+
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/41520e00-9963-4c45-a3c1-41877e47a9da" />
+
+### Finding 2 — Unprotected Directory Exposing a Full Database Backup
+
+**Risk Rating: 🔴 Critical**
+
+The `/old/` directory identified through `robots.txt` was accessible without authentication and had **directory listing enabled**. The directory exposed a complete, downloadable SQL database backup named `mediroza_db_backup_2019.sql`, potentially allowing unauthorized access to sensitive application data.
+
+
+
+
+
+
+
+
