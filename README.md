@@ -265,7 +265,44 @@ hashcat -m 10500 hashcat_ready.txt /usr/share/wordlists/rockyou.txt
 <img width="816" height="465" alt="image" src="https://github.com/user-attachments/assets/17f3f5ff-e645-409c-a60d-cd0a1fa3b5f0" />
 
 
+<img width="1280" height="654" alt="image" src="https://github.com/user-attachments/assets/e85b1def-9dff-4833-bb75-79b58f02ab58" />
 
+
+**Impact:** The weak password protection provided only limited security for the patient documents. Even without the SQL injection identified in Finding 4, an attacker with access to the files could potentially recover the passwords using commonly available password-cracking tools.
+
+---
+
+## 4️⃣ Risk Summary
+
+| **#** | **Finding** | **Risk Rating** |
+|---:|---|---|
+| **1** | Reconnaissance Surface / `robots.txt` Disclosure | Informational |
+| **2** | Unprotected `/old/` Directory Exposing Database Backup | 🔴 Critical |
+| **3** | Staff Portal SQL Injection Testing — Unsuccessful | 🟡 Low |
+| **4** | Patient Portal SQL Injection Authentication Bypass | 🔴 Critical |
+| **5** | Weak Password Protection on Encrypted Patient PDFs | 🟠 High |
+
+---
+
+## 5️⃣ Recommendations & Remediation
+
+| **Finding** | **Recommended Remediation** |
+|---|---|
+| **`robots.txt` Disclosure** | Do not use `robots.txt` as a security control. Sensitive directories should be protected through proper authentication and access controls. |
+| **Exposed `/old/` Backup** | Disable directory listing and remove database backups from web-accessible directories. Store backups outside the web root and review the server for other exposed or forgotten files. |
+| **Patient Portal SQL Injection** | Use parameterized queries or prepared statements for all database operations. Apply consistent input validation and secure coding practices across every application endpoint. |
+| **Weak PDF Passwords** | Enforce strong, randomly generated passwords for protected documents. Where possible, use authenticated access-controlled downloads instead of relying solely on PDF-level password protection. |
+| **General Security** | Perform regular automated and manual security assessments. Routine vulnerability scanning and configuration reviews could help identify exposed files and other weaknesses before they are chained together. 
+
+
+## 🎓 Internship Completion Overview
+
+This capstone project represents the completion of a **4-week cybersecurity internship with Network Walks Academy**, covering practical cybersecurity skills from lab setup and reconnaissance to password security and penetration testing.
+
+- **Week 1:** VirtualBox Lab Setup — Kali Linux, Windows 10, and Networking Fundamentals
+- **Week 2:** Footprinting & Reconnaissance — GHDB, Maltego, theHarvester, Nmap, and other reconnaissance tools
+- **Week 3:** Password Security & Cracking — John the Ripper and Networkwalks password-cracking tools
+- **Week 4:** Black-Box Penetration Testing — Full assessment, vulnerability analysis, exploitation, and reporting
 
 
 
